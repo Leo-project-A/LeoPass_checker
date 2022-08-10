@@ -1,8 +1,10 @@
-## 53b89d59bcdcdba3d32fbbf38e60900aaf0aed10
 import requests
 import hashlib
 import sys
 import io
+
+HASH_SPLIT = 5
+ENCODING_TYPE = 'utf_8'
 
 def request_APT_data(quary_char: str):
     url = 'https://api.pwnedpasswords.com/range/' + quary_char
@@ -12,9 +14,9 @@ def request_APT_data(quary_char: str):
     return res
 
 def pwnd_API_check(password: str):
-    hash1password = hashlib.sha1(password.encode('utf_8')).hexdigest().upper()
-    head = hash1password[:5]
-    tail = hash1password[5:]
+    hash1password = hashlib.sha1(password.encode(ENCODING_TYPE)).hexdigest().upper()
+    head = hash1password[:HASH_SPLIT]
+    tail = hash1password[HASH_SPLIT:]
 
     res = request_APT_data(head)
     return get_leak_count(res, tail)
@@ -29,8 +31,10 @@ def get_leak_count(leaks, check):
 def run(filename):
     try:
         with open(filename) as file:
-            for password in file.readlines():
-                password = password.strip()
+            for line in file.readlines():
+                password = line.strip()
+                if not password:
+                    continue
                 count = pwnd_API_check(password)
                 if count:
                     print(f"oh no, '{password}' been pwnd {count} time(s)!!")
@@ -39,10 +43,8 @@ def run(filename):
     except:
         print('file does not exist')
 
-
 if __name__ == '__main__':
     if len(sys.argv) == 2:
         run(sys.argv[1])
     else:
         print(f'{sys.argv[0]} require 1 argument')
-        
