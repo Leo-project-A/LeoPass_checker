@@ -25,25 +25,26 @@ Password Checker using online API
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-You can run how many passwrods using the text file
+You can run how many passwrods you want using the text file
 
 Exemple "passwords" file:
-   >hello \n
-   >12345   \n
-   >NFDGJfgdfkd3 \n
-   > \n
-   >1234567890 \n
-   >password \n
-   >              \n
-   > \n
-   >fds \n
-   > \n
-   >3175890048 \n
-   >0354346712 \n
-   >0867867889 \n
-   >0998667867 \n
-   > \n
-   > \n
+   ```
+   hello
+   12345
+   NFDGJfgdfkd3
+   
+   1234567890
+   password
+                
+   
+   fds
+   
+   3175890048
+   0354346712
+   0867867889
+   0998667867
+   ```
+   
 
 Output for default password file:
    ```
