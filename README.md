@@ -25,7 +25,39 @@ Password Checker using online API
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+You can run how mayn passwrods using the text file
+
+Exemple "passwords" file:
+   >hello
+   >12345
+   >NFDGJfgdfkd3
+   >
+   >1234567890
+   >password
+   >             
+   >
+   >fds
+   >
+   >3175890048
+   >0354346712
+   >0867867889
+   >0998667867
+   >
+   >
+
+Output for default password file:
+   ```
+   oh no, 'hello' been pwnd 264149 time(s)!!
+   oh no, '12345' been pwnd 2570791 time(s)!!
+   NFDGJfgdfkd3 is GOLD!
+   oh no, '1234567890' been pwnd 3713205 time(s)!!
+   oh no, 'password' been pwnd 9636205 time(s)!!
+   oh no, 'fds' been pwnd 1260 time(s)!!
+   3175890048 is GOLD!
+   0354346712 is GOLD!
+   0867867889 is GOLD!
+   0998667867 is GOLD!
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
