@@ -10,8 +10,11 @@ Password Checker using online API
 ## Getting Started
 
 1. edit the "passwords" file with the passwords you want to check
-
-2. Run in your terminal
+2. Install dependencies
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. Run in your terminal
    ```sh
    python Password_checker.py passwords.txt
    ```
